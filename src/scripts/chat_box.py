@@ -1,4 +1,5 @@
 import amino
+from time import sleep
 from src import configs
 from src.utils import Chats
 from tabulate import tabulate
