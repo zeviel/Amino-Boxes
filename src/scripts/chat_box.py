@@ -75,8 +75,8 @@ class ChatBox:
 					else:
 						print(f"{deleted} messages is deleted")
 						break
-				except Exception as e:
-					print(e)
+			except Exception as e:
+				print(e)
 
 
 	def set_view_mode_with_timer(self, chat_id: str, duration: int):
