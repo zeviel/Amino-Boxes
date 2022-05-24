@@ -60,26 +60,20 @@ class ChatBox:
 	def clear_chat_from_messages(self, chat_id: str, count: int):
 		deleted = 0
 		page_token = None
-		with ThreadPoolExecutor(max_workers=100) as executor:
-			while True:
-				try:
-					messages = self.sub_client.get_chat_messages(
-						chatId=chat_id,
-						size=100,
-						pageToken=page_token)
-					page_token = messages.nextPageToken
-					for message_id in messages.messageId:
-						if deleted < count:
-							executor.submit(
-								self.sub_client.delete_message,
-								chat_id,
-								message_id,
-								False,
-								None)
-							deleted += 1
-						else:
-							print(f"{deleted} messages is deleted")
-							break
+		while True:
+			try:
+				messages = self.sub_client.get_chat_messages(
+					chatId=chat_id,
+					size=100,
+					pageToken=page_token)
+				page_token = messages.nextPageToken
+				for message_id in messages.messageId:
+					if deleted < count:
+						self.sub_client.delete_message(chatId=chat_id, messageId=message_id)
+						deleted += 1
+					else:
+						print(f"{deleted} messages is deleted")
+						break
 				except Exception as e:
 					print(e)
 
