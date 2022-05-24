@@ -1,0 +1,3 @@
+amino.py
+tabulate
+requests
