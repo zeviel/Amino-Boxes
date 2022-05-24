@@ -20,7 +20,7 @@ class RaidBox:
 				print(
 					f"{configs.COLORS[5]}{tabulate(configs.RAID_BOX_MENU, headers=[configs.CATEGORIES[1]], tablefmt='fancy_grid')}"
 				)
-				select = int(input("[Select = "))
+				select = int(input("[Select]::: "))
 				if select == 1:
 					self.spam_wall_with_comments()
 				elif select == 2:
