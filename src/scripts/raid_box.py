@@ -18,10 +18,7 @@ class RaidBox:
 		while True:
 			try:
 				print(
-					tabulate(
-						configs.RAID_BOX_MENU,
-						headers=[configs.CATEGORIES[1]],
-						tablefmt="grid")
+					f"{configs.COLORS[5]}{tabulate(configs.RAID_BOX_MENU, headers=[configs.CATEGORIES[1]], tablefmt='fancy_grid')}"
 				)
 				select = int(input("[Select = "))
 				if select == 1:
