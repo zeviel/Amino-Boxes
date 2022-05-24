@@ -6,7 +6,7 @@ from src.service import MainApp
 
 
 def main():
-	info = get("https://github.com/deluvsushi/Amino-Boxes/raw/master/version.json").text
+	info = loads(get("https://raw.githubusercontent.com/deluvsushi/Amino-Boxes/main/version.json").text)
 	version = info["version"]
 	authors = info["authors"]
 	github = info["github"]
