@@ -56,7 +56,7 @@ MAIN_MENU = [
 ]
 
 RAID_BOX_MENU = [ 
-	[1, "Spam wall with comments"],
+	[1, f"{COLORS[5]}Spam wall with comments"],
 	[2, "Spam blog with comments"],
 	[3, "Spam chat with messages"],
 	[4, "Kick user from chat"]
