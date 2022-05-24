@@ -2,22 +2,31 @@ import amino
 from src import configs
 from tabulate import tabulate
 
+
 class Login:
 	@staticmethod
 	def login(client: amino.Client):
-		try:
-			print(tabulate(configs.LOGIN_MENU, headers=[configs.CATEGORIES[7]], tablefmt="fancy_grid"))
-			select = int(input("[Select]::: "))
-			if select == 1:
-				email = input("[Email]::: ")
-				password = input("[Password]::: ")
-				client.login(email=email, password=password)
-			elif select == 2:
-				client.login_sid(input("[SID]::: "))
+		while True:
+			try:
+				print(
+					tabulate(
+						configs.LOGIN_MENU,
+						headers=[configs.CATEGORIES[7]],
+						tablefmt="fancy_grid"))
+				select = int(input("[Select]::: "))
+				if select == 1:
+					email = input("[Email]::: ")
+					password = input("[Password]::: ")
+					client.login(email=email, password=password)
+					break
+				elif select == 2:
+					SID = input("[SID]::: ")
+					client.login_sid(SID=SID)
+					break
 			except Exception as e:
 				print(e)
-			
-					
+
+
 class Communities:
 	@staticmethod
 	def communities(client: amino.Client):
@@ -29,6 +38,7 @@ class Communities:
 				return clients.comId[int(input("[Select the community]::: ")) - 1]
 			except Exception as e:
 				print(e)
+
 
 class Chats:
 	@staticmethod
