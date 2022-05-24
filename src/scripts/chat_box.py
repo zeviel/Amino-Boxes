@@ -113,6 +113,7 @@ class ChatBox:
 			fans_only = chat_style["fansOnly"]
 			background_image = chat_style["bm"][1]
 			self.sub_client.edit_chat(
+				chatId=chat_id,
 				title=title,
 				content=content,
 				icon=icon,
