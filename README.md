@@ -8,7 +8,7 @@ Collection of scripts for amino
 - apt upgrade -y
 - pkg install python
 - git clone https://github.com/deluvsushi/Amino-Boxes
-- cd Amino-Boxes/src
+- cd Amino-Boxes
 - pip install -r requirements.txt
 - python main.py
 ```
