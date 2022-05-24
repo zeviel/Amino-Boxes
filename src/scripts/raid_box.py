@@ -1,4 +1,3 @@
-
 import amino
 from src.utils import Chats
 from tabulate import tabulate
@@ -18,7 +17,10 @@ class RaidBox:
 		while True:
 			try:
 				print(
-					f"{configs.COLORS[3]}{tabulate(configs.OTHER_BOX_MENU, headers=[configs.CATEGORIES[5]], tablefmt='grid')}"
+					tabulate(
+						configs.RAID_BOX_MENU,
+						headers=[configs.CATEGORIES[1]],
+						tablefmt="grid")
 				)
 				select = int(input("[Select = "))
 				if select == 1:
