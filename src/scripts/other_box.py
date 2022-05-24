@@ -1,4 +1,5 @@
 import amino
+from src import configs
 from src.utils import Chats
 from tabulate import tabulate
 from concurrent.futures import ThreadPoolExecutor
