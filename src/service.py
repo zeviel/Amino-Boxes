@@ -4,12 +4,12 @@ from src import configs
 from src.utils import Login
 from src.utils import Communities
 from src.utils import Chats
-from src.scripts.raid_box import RaidBox
-from src.scripts.activity_box import ActivityBox
-from src.scripts.profile_box import ProfileBox
-from src.scripts.chat_box import ChatBox
-from src.scripts.other_box import OtherBox
-from src.scripts.account_box import AccountBox
+from scripts.raid_box import RaidBox
+from scripts.activity_box import ActivityBox
+from scripts.profile_box import ProfileBox
+from scripts.chat_box import ChatBox
+from scripts.other_box import OtherBox
+from scripts.account_box import AccountBox
 
 
 class MainApp:
