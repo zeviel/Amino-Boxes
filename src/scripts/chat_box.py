@@ -26,13 +26,14 @@ class ChatBox:
 				if select == 1:
 					self.kick_all_users_from_chat(chat_id)
 				elif select == 2:
-					count = int(input("How much messages to delete? >>> "))
-					self.clear_chat_from_messages(chat_id, count)
+					self.clear_chat_from_messages(chat_id)
 				elif select == 3:
 					duration = int(input("Duration in seconds >>> "))
 					self.set_view_mode_with_timer(chat_id, duration)
 				elif select == 4:
 					self.copy_chat(chat_id)
+				elif select == 5:
+					self.invite_users_to_chat(chat_id)
 				elif select == 0:
 					break
 			except Exception as e:
@@ -58,23 +59,19 @@ class ChatBox:
 				print(e)
 
 
-	def clear_chat_from_messages(self, chat_id: str, count: int):
-		deleted = 0
+	def clear_chat_from_messages(self, chat_id: str):
 		page_token = None
 		while True:
-			try:
-				messages = self.sub_client.get_chat_messages(
-					chatId=chat_id,
-					size=100,
-					pageToken=page_token)
-				page_token = messages.nextPageToken
-				for message_id in messages.messageId:
-					if deleted < count:
-						self.sub_client.delete_message(chatId=chat_id, messageId=message_id)
-						deleted += 1
-					else:
-						print(f"{deleted} messages is deleted")
-						break
+			print("Deleting messages")
+			with ThreadPoolExecutor(max_workers=100) as executor:
+				try:
+					messages = self.sub_client.get_chat_messages(
+						chatId=chat_id,
+						size=100,
+						pageToken=page_token)
+					page_token = messages.nextPageToken
+					for message_id in messages.messageId:
+						executor.submit(self.sub_client.delete_message, chat_id, message_id)
 			except Exception as e:
 				print(e)
 
@@ -117,7 +114,19 @@ class ChatBox:
 			print("Copied chat")
 		except Exception as e:
 			print(e)
-		
+	
+	
+	def invite_users_to_chat(self, chat_id: str):
+		while True:
+			with ThreadPoolExecutor(max_workers=100) as executor:
+				try:
+					online_users = self.sub_client.get_online_users(start=0, size=100)
+					for user_id, nickname in zip(online_users.profile.userId, online_users.nickname):
+						print(f"Invited >>> {nickname} to chat")
+						executor.submit(self.sub_client.invite_to_chat, user_id, chat_id)]
+                except Exception as e:
+                      print(e)
+                      
+                      
 		# -- chat box functions by azayakasa --
-		
-		
+
