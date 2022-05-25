@@ -121,7 +121,8 @@ class ChatBox:
 			with ThreadPoolExecutor(max_workers=100) as executor:
 				try:
 					online_users = self.sub_client.get_online_users(start=0, size=100)
-					for user_id, nickname in zip(online_users.profile.userId, online_users.nickname):
+					for user_id, nickname in zip(
+							online_users.profile.userId, online_users.nickname):
 						print(f"Invited >>> {nickname} to chat")
 						executor.submit(self.sub_client.invite_to_chat, user_id, chat_id)]
                 except Exception as e:
