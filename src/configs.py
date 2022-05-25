@@ -83,7 +83,8 @@ CHAT_BOX_MENU = [
 	[1, f"{COLORS[4]}Kick all users from chat"],
 	[2, "Clear chat from messages"],
 	[3, "Set view mode with timer"],
-	[4, "Copy chat"]
+	[4, "Copy chat"],
+	[5, "Invite users to chat"]
 ]
 
 OTHER_BOX_MENU = [
