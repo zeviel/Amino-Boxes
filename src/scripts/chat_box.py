@@ -72,8 +72,8 @@ class ChatBox:
 					page_token = messages.nextPageToken
 					for message_id in messages.messageId:
 						executor.submit(self.sub_client.delete_message, chat_id, message_id)
-			except Exception as e:
-				print(e)
+				except Exception as e:
+					print(e)
 
 
 	def set_view_mode_with_timer(self, chat_id: str, duration: int):
