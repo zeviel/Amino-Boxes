@@ -125,8 +125,8 @@ class ChatBox:
 							online_users.profile.userId, online_users.nickname):
 						print(f"Invited >>> {nickname} to chat")
 						[executor.submit(self.sub_client.invite_to_chat, user_id, chat_id)]
-                except Exception as e:
-                      print(e)
+				except Exception as e:
+					print(e)
                       
                       
 		# -- chat box functions by azayakasa --
