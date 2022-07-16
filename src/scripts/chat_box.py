@@ -16,7 +16,7 @@ class ChatBox:
 	
 	
 	def start(self):
-		chat_id = Chats().chats(self.sub_client)
+		chat_id = Chats.chats(self.sub_client)
 		while True:
 			try:
 				print(
