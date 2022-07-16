@@ -15,9 +15,9 @@ from src.scripts.account_box import AccountBox
 class MainApp:
 	def start(self):
 		self.client = amino.Client()
-		Login().login(self.client)
+		Login.login(self.client)
 		self.sub_client = amino.SubClient(
-			comId=Communities().communities(
+			comId=Communities.communities(
 			self.client), profile=self.client.profile)
 		while True:
 			try:
