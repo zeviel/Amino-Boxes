@@ -9,7 +9,7 @@ COLORS = [
 ]
 
 AUTHORS = [
-	"deluvsushi",
+	"zeviel",
 	"Savier",
 	"Azayakasa",
 	"Auroraflow",
