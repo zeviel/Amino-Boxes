@@ -4,7 +4,7 @@ from tabulate import tabulate
 from concurrent.futures import ThreadPoolExecutor
 
 
-		# -- activity box functions by deluvsushi -- 
+		# -- activity box functions by zeviel -- 
 
 
 class ActivityBox:
@@ -125,6 +125,6 @@ class ActivityBox:
 						print(e)
 							
 
-		# -- activity box functions by deluvsushi --
+		# -- activity box functions by zeviel --
 		
 		
