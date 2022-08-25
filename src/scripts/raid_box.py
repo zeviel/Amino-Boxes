@@ -5,7 +5,7 @@ from tabulate import tabulate
 from concurrent.futures import ThreadPoolExecutor
 
 		
-		# -- raid box functions by deluvsushi --
+		# -- raid box functions by zeviel --
 
 
 class RaidBox:
@@ -124,4 +124,4 @@ class RaidBox:
 				print(e)
 			
 			
-		# -- raid box functions by deluvsushi --
+		# -- raid box functions by zeviel --
