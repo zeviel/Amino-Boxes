@@ -34,7 +34,7 @@ class OtherBox:
 
 
 	def send_system_message(self):
-		chat_id = Chats().chats(self.sub_client)
+		chat_id = Chats.chats(self.sub_client)
 		while True:
 			try:
 				self.sub_client.send_message(
