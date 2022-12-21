@@ -61,7 +61,7 @@ class RaidBox:
 	
 	
 	def spam_chat_with_messages(self):
-		chat_id = Chats().chats(self.sub_client)
+		chat_id = Chats.chats(self.sub_client)
 		message = input("[Message]::: ")
 		message_type = int(input("[Message type]::: "))
 		while True:
@@ -74,7 +74,7 @@ class RaidBox:
 	
 	
 	def kick_user_from_chat(self):
-		chat_id = Chats().chats(self.sub_client)
+		chat_id = Chats.chats(self.sub_client)
 		while True:
 			try:
 				user_id = self.client.get_from_code(input("-- [User link]:::")).objectId
