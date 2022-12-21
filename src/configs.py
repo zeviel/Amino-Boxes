@@ -17,6 +17,7 @@ AUTHORS = [
 	"Morphine",
 	"Moriarti"
 ]
+
 CATEGORIES = [
 	"Main Menu",
 	"Raid Box",
